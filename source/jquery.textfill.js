@@ -150,12 +150,17 @@
 			//     http://stackoverflow.com/a/17433451/1094964
 			//
 
+			var lastFontSize;
+
 			while (minFontPixels < (maxFontPixels - 1)) {
 
 				var fontSize = Math.floor((minFontPixels + maxFontPixels) / 2);
 				ourText.css('font-size', fontSize);
 
-				if (func.call(ourText) <= max) {
+				if (fontSize == lastFontSize) {
+					break;
+				}
+				else if (func.call(ourText) <= max) {
 					minFontPixels = fontSize;
 
 					if (func.call(ourText) == max)
@@ -169,6 +174,8 @@
 					maxHeight, maxWidth,
 					minFontPixels, maxFontPixels
 				);
+
+				lastFontSize = fontSize;
 			}
 
 			ourText.css('font-size', maxFontPixels);
