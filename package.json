@@ -1,0 +1,10 @@
+{
+  "name": "jquery-textfill",
+  "version": "1.5.10",
+  "description": "jQuery TextFill extension",
+  "main": "source/jquery.textfill.js",
+  "keywords": [],
+  "dependencies": {
+    "jquery": ">=1.6"
+  }
+}
