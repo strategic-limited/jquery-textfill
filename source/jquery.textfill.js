@@ -289,26 +289,7 @@
 				'New font-size: ' + ourText.css('font-size') + ' }'
 			);
 
-			// Oops, something wrong happened!
-			// We weren't supposed to exceed the original size
-			if ((ourText.width()  > maxWidth) ||
-				(ourText.height() > maxHeight && !Opts.widthOnly)) {
-
-				ourText.css('font-size', oldFontSize);
-
-				// Failure callback
-				if (Opts.fail)
-					Opts.fail(this);
-
-				_debug(
-					'[TextFill] Failure { ' +
-					'Current Width: '  + ourText.width()  + ', ' +
-					'Maximum Width: '  + maxWidth         + ', ' +
-					'Current Height: ' + ourText.height() + ', ' +
-					'Maximum Height: ' + maxHeight        + ' }'
-				);
-			}
-			else if (Opts.success) {
+			if (Opts.success) {
 				Opts.success(this);
 			}
 			else if (Opts.callback) {
